@@ -121,6 +121,8 @@ footer{
 margin-top:15px;
 font-size:.8rem;
 opacity:.85;
+line-height:1.4;
+text-align:center;
 }
 
 /* HEADERS */
@@ -185,7 +187,11 @@ oninput="changeFont(this.value)">
 <button onclick="share()">Share Result</button>
 
 <footer>
-© Manik Roy 2025. All Rights Reserved.
+This app was developed by <strong>Manik Roy</strong> with input from the
+<strong>TOFI Risk Checker</strong>, created by
+<strong>Mr. Jagannath Das</strong>, Co-Founder at FUME (LinkedIn).
+It is built for <strong>free distribution</strong> to the Indian people
+for their better, healthier future.
 </footer>
 
 </div>
@@ -195,7 +201,6 @@ oninput="changeFont(this.value)">
 if(localStorage.theme==="dark"){
 document.body.classList.add("dark");
 }
-
 function toggleMode(){
 document.body.classList.toggle("dark");
 localStorage.theme=
@@ -253,10 +258,7 @@ BMI: ${bmi}<br>
 Waist Risk: ${(g=="Male"&&w>90)||(g=="Female"&&w>80)?"⚠️ High":"✅ Normal"}<br>
 Body Fat: ${(g=="Male"&&fat>20)||(g=="Female"&&fat>30)?"⚠️ TOFI":"✅ Normal"}<br>
 Insulin: ${ins>10?"⚠️ Resistant":"✅ Optimal"}<br><br>
-
-<b class="${status=="HIGH RISK"?"red":"green"}">
-${status}
-</b>
+<b class="${status=="HIGH RISK"?"red":"green"}">${status}</b>
 `;
 }
 
